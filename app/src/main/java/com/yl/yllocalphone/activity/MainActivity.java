@@ -3,6 +3,7 @@ package com.yl.yllocalphone.activity;
 import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.content.res.ColorStateList;
 import android.os.Build;
 import android.os.Bundle;
 import android.telephony.TelephonyManager;
@@ -82,6 +83,8 @@ public class MainActivity extends BaseActivity<MainPresenter> {
             return insets;
         });
         navigationView = findViewById(R.id.navigationView);
+        ColorStateList csl=(ColorStateList)getResources().getColorStateList(R.drawable.navigation_menu_item_color);
+        navigationView.setItemTextColor(csl);
         navigationView.setNavigationItemSelectedListener(item -> {
             int itemId = item.getItemId();
             if (itemId == R.id.phone_dial) {
